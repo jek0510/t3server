@@ -475,7 +475,7 @@ export const makeServerRuntimeStartup = Effect.gen(function* () {
                 `│  ${localhostPairingUrl}`,
                 "│                                                         │",
                 "│  Field 2 — Actual server URL:                           │",
-                `│  ${publicUrl}`,
+                `│  ${publicUrl}:3000`,
                 "└─────────────────────────────────────────────────────────┘",
                 "",
               ].join("\n"),
