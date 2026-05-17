@@ -1,0 +1,55 @@
+{
+  "name": "@t3tools/monorepo",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "apps/server",
+      "packages/*"
+    ],
+    "catalog": {
+      "effect": "4.0.0-beta.59",
+      "@effect/openapi-generator": "4.0.0-beta.59",
+      "@effect/platform-bun": "4.0.0-beta.59",
+      "@effect/platform-node": "4.0.0-beta.59",
+      "@effect/platform-node-shared": "4.0.0-beta.59",
+      "@effect/sql-sqlite-bun": "4.0.0-beta.59",
+      "@effect/vitest": "4.0.0-beta.59",
+      "@effect/language-service": "0.84.2",
+      "@pierre/diffs": "1.1.20",
+      "@types/bun": "^1.3.11",
+      "@types/node": "^24.10.13",
+      "tsdown": "^0.20.3",
+      "typescript": "^5.7.3",
+      "vitest": "^4.0.0"
+    }
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --cwd apps/server src/bin.ts",
+    "start": "bun run --cwd apps/server src/bin.ts"
+  },
+  "devDependencies": {
+    "@effect/language-service": "catalog:",
+    "@types/node": "catalog:",
+    "typescript": "catalog:"
+  },
+  "overrides": {
+    "@effect/platform-bun": "catalog:",
+    "@effect/platform-node": "catalog:",
+    "@effect/platform-node-shared": "catalog:",
+    "@effect/sql-sqlite-bun": "catalog:",
+    "@effect/vitest": "catalog:",
+    "effect": "catalog:"
+  },
+  "engines": {
+    "bun": "^1.3.11",
+    "node": "^24.13.1"
+  },
+  "packageManager": "bun@1.3.11",
+  "trustedDependencies": [
+    "node-pty"
+  ],
+  "patchedDependencies": {
+    "effect@4.0.0-beta.59": "patches/effect@4.0.0-beta.59.patch"
+  }
+}
